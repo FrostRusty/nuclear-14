@@ -4,13 +4,24 @@
   name: NCR doctor
   description: Treat the troopers and offer services to the wasteland people.
   playTimeTracker: NCRDoctor
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: NCR
+      time: 3600 # 1 hour
   startingGear: NCRDoctorGear
   icon: "JobIconPassenger"
   supervisors: job-supervisors-ncr-nco
   canBeAntag: false
   access:
-  - NCRCadet
-  - NCRSoldier
+  - NCR
+  - NCRMedic
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: NpcFactionMember
+        factions:
+          - NCR
+
 - type: startingGear
   id: NCRDoctorGear
   equipment:
@@ -23,6 +34,7 @@
     id: N14IDNCRDogtag
     pocket1: N14WeaponPistol9mm
     outerClothing: ClothingOuterCoatLab
+    backpack: N14ClothingBackpackSatchelNCRFilled
   innerClothingSkirt: N14ClothingUniformNCR
   satchel: N14ClothingBackpackSatchelNCRFilled
   duffelbag: N14ClothingBackpackDuffelFilled  # N14TODO: Doctors Bag

@@ -4,14 +4,23 @@
   name: NCR military police
   description: Protect the camp and make sure the soldiers behave correctly.
   playTimeTracker: NCRMP
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: NCR
+      time: 14400 # 4 hours
   startingGear: NCRMPGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-ncr
   canBeAntag: false
   access:
-  - NCRCadet
-  - NCRSoldier
-  - NCRNCO
+  - NCR
+  - NCRMP
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: NpcFactionMember
+        factions:
+          - NCR
 
 - type: startingGear
   id: NCRMPGear
@@ -22,7 +31,8 @@
     shoes: N14ClothingBootsLeather
     belt: N14ClothingBeltPoliceFilled
     outerClothing: N14ClothingOuterNCRLightPouchedVest
-    id: N14IDNCRDogtag
+    id: N14IDNCRDogtagNCO
+    backpack: N14ClothingBackpackSatchelNCRFilled
   innerClothingSkirt: N14ClothingMPUniformNCR #placeholder
   satchel: N14ClothingBackpackSatchelNCRFilled
 

@@ -7,6 +7,14 @@
   startingGear: TownMayorGear
   icon: "JobIconPassenger"
   supervisors: job-supervisors-townsfolk
+  accessGroups:
+  - Oasis
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: NpcFactionMember
+        factions:
+          - Townsfolk
 
 - type: startingGear
   id: TownMayorGear

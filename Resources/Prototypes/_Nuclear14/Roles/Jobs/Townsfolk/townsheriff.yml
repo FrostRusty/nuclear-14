@@ -4,9 +4,21 @@
   name: job-name-townsheriff
   description: job-description-townsheriff
   playTimeTracker: TownSheriff
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Townsfolk
+      time: 18000 # 5 hours
   startingGear: TownSheriffGear
   icon: "JobIconPassenger"
   supervisors: job-supervisors-townsfolk
+  access:
+  - OasisSheriff
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: NpcFactionMember
+        factions:
+          - Townsfolk
 
 - type: startingGear
   id: TownSheriffGear

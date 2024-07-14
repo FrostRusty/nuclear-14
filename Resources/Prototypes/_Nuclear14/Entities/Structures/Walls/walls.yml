@@ -8,9 +8,9 @@
   name: store wall
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Walls/store.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/store.rsi
   - type: Icon
-    sprite: _Nuclear14/Structures/Walls/store.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/store.rsi
   - type: Destructible
     thresholds:
     - trigger:
@@ -22,17 +22,17 @@
   - type: IconSmooth
     key: wallsstore
     base: store
-    
+
 - type: entity
   parent: N14WallStore
   id: N14WallSuperstore
   name: store wall
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Walls/superstore.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/superstore.rsi
   - type: Icon
-    sprite: _Nuclear14/Structures/Walls/superstore.rsi
-    
+    sprite: _Nuclear14/Structures/Walls/nc14/superstore.rsi
+
 - type: entity
   parent: N14WallStore
   id: N14WallRuins
@@ -40,26 +40,26 @@
   description: A ruined wall from a pre-war structure.
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Walls/ruins.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/ruins.rsi
   - type: Icon
-    sprite: _Nuclear14/Structures/Walls/ruins.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/ruins.rsi
   - type: IconSmooth
     key: wallsruins
     base: ruin
-    
+
 - type: entity
   parent: N14WallStore
   id: N14WallBrick
   name: brick wall
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Walls/brick.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/brick.rsi
   - type: Icon
-    sprite: _Nuclear14/Structures/Walls/brick.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/brick.rsi
   - type: IconSmooth
     key: wallsbrick
     base: brick
-    
+
 - type: entity
   parent: N14WallStore
   id: N14WallConcreteLight
@@ -67,20 +67,20 @@
   suffix: light
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Walls/concrete.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/concrete.rsi
   - type: Icon
-    sprite: _Nuclear14/Structures/Walls/concrete.rsi
-    
+    sprite: _Nuclear14/Structures/Walls/nc14/concrete.rsi
+
 - type: entity
   parent: N14WallConcreteLight
   id: N14WallConcreteDark
   suffix: dark
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Walls/concretedark.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/concretedark.rsi
   - type: Icon
-    sprite: _Nuclear14/Structures/Walls/concretedark.rsi
-    
+    sprite: _Nuclear14/Structures/Walls/nc14/concretedark.rsi
+
 # Metal walls
 - type: entity
   parent: BaseWall
@@ -88,9 +88,9 @@
   name: metal wall
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Walls/enclavewall.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/enclavewall.rsi
   - type: Icon
-    sprite: _Nuclear14/Structures/Walls/enclavewall.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/enclavewall.rsi
   - type: Destructible
     thresholds:
     - trigger:
@@ -107,7 +107,7 @@
   - type: IconSmooth
     key: wallsenclave
     base: enclave
-    
+
 # Wood walls
 - type: entity
   id: N14WallWoodFrame
@@ -119,8 +119,21 @@
     graph: N14WoodWall
     node: Frame
   - type: Sprite
-    sprite: _Nuclear14/Structures/Walls/woodlog.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/woodlog.rsi
     state: girder
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 0
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   parent: BaseWall
@@ -128,9 +141,9 @@
   name: wooden wall
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Walls/woodwhite.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/woodwhite.rsi
   - type: Icon
-    sprite: _Nuclear14/Structures/Walls/woodwhite.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/woodwhite.rsi
   - type: Damageable
     damageModifierSet: Wood
     damageContainer: Inorganic
@@ -138,7 +151,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 200
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -147,13 +160,13 @@
         spawn:
           MaterialWoodPlank:
             min: 1
-            max: 2
+            max: 3
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: IconSmooth
     key: wallswood
     base: wood
-    
+
 - type: entity
   parent: BaseStructureDynamic
   id: N14WallWoodWhiteFrame
@@ -177,7 +190,7 @@
         layer:
         - GlassAirlockLayer
   - type: Sprite
-    sprite: _Nuclear14/Structures/Walls/woodwhite.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/woodwhite.rsi
     state: girder
   - type: Damageable
     damageModifierSet: Wood
@@ -198,24 +211,24 @@
             max: 1
       - !type:DoActsBehavior
         acts: ["Destruction"]
-        
+
 - type: entity
   parent: N14WallWoodWhite
   id: N14WallWoodDark
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Walls/wooddark.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/wooddark.rsi
   - type: Icon
-    sprite: _Nuclear14/Structures/Walls/wooddark.rsi
-    
+    sprite: _Nuclear14/Structures/Walls/nc14/wooddark.rsi
+
 - type: entity
   parent: N14WallWoodWhiteFrame
   id: N14WallWoodDarkFrame
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Walls/wooddark.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/wooddark.rsi
     state: girder
-    
+
 - type: entity
   parent: N14WallWoodWhite
   id: N14WallWoodLog
@@ -223,16 +236,16 @@
   description: A wall made out of wooden logs.
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Walls/woodlognew.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/woodlognew.rsi
   - type: Icon
-    sprite: _Nuclear14/Structures/Walls/woodlognew.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/woodlognew.rsi
   - type: IconSmooth
     key: log
     base: log
   - type: Construction
     graph: N14WoodWall
     node: logWall
-    
+
 # Tent Walls
 - type: entity
   parent: BaseWall
@@ -241,9 +254,9 @@
   description: A tent made from cloth. Keeps the weather out at least.
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Walls/tent.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/tent.rsi
   - type: Icon
-    sprite: _Nuclear14/Structures/Walls/tent.rsi
+    sprite: _Nuclear14/Structures/Walls/nc14/tent.rsi
   - type: Damageable
     damageModifierSet: Web
     damageContainer: Inorganic
@@ -261,3 +274,31 @@
   - type: IconSmooth
     key: tent
     base: tent
+
+- type: entity
+  id: N14BlastDoorExteriorIndestructible
+  parent: BlastDoor
+  suffix: Indestructible, Closed
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10000 # pseudo indestructible
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  id: BlastDoorExteriorIndestructibleOpen
+  parent: BlastDoorOpen
+  suffix: Indestructible, Open
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]

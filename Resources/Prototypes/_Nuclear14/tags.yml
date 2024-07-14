@@ -1,31 +1,38 @@
 # Alphabetical order.
 - type: Tag
   id: Ammunition
-  
+
 - type: Tag
   id: Axe
-  
+
 - type: Tag
   id: Bedroll
-  
+
 - type: Tag
   id: Bomb
+
+- type: Tag
+  id: ComposterCompatible
 
 - type: Tag
   id: JunkItem
 
 - type: Tag
   id: JunkPile
-  
+
 - type: Tag
   id: Powder
-  
+
 - type: Tag
   id: Saw
 
 # Guns types.
 - type: Tag
   id: Revolver
+# SpeedLoader
+#TODO: move to EE
+- type: Tag
+  id: SpeedLoaderInternal
 
 # Ammo tags(cartriges).
 - type: Tag
@@ -129,12 +136,18 @@
   id: N14Clip308Rifle
 
 - type: Tag
+  id: N14Magazine50AMR
+
+- type: Tag
   id:  SpeedLoader
 
 # Ammo tags(Battery).
 
 - type: Tag
   id: N14PowerCellHigh
+
+- type: Tag
+  id: N14PowerCellFusion
 
 - type: Tag
   id: N14PlasmaCartridge
@@ -150,10 +163,28 @@
 # Mobs
 - type: Tag
   id: Brahmin
-  
+
 - type: Tag
   id: Bighorner
-  
+
+- type: Tag
+  id: Deathclaw
+
+- type: Tag
+  id: DogFeral
+
+- type: Tag
+  id: Gecko
+
+- type: Tag
+  id: Molerat
+
+- type: Tag
+  id: Nightstalker
+
 - type: Tag
   id: Radstag
+
+- type: Tag
+  id: Yaoguai
 

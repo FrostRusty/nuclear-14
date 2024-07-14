@@ -9,13 +9,19 @@
   supervisors: job-supervisors-caravan
   access:
   - CaravanCompanyGuard
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: NpcFactionMember
+        factions:
+          - CaravanCompany
 
 - type: startingGear
   id: CaravanGuardGear
   equipment:
     jumpsuit: N14ClothingUniformJumpsuitCaravan
     back: N14ClothingBackpackCaravanFilled
-    shoes: N14ClothingBootsCombat
+    shoes: N14ClothingBootsLeather
     id: N14IDPassportCaravan
     pocket2: N14WeaponPistol10mm
     outerClothing: N14ClothingOuterLightMetalArmor
